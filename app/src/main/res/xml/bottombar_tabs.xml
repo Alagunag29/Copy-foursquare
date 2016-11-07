@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/search"
+        icon="@drawable/ic_search"
+        title="@string/search_bottomBar"
+        barColorWhenSelected="@color/textIcon"/>
+    <tab
+        id="@+id/list"
+        icon="@drawable/ic_list"
+        title="@string/list_bottomBar"
+        barColorWhenSelected="@color/textIcon"
+        />
+    <tab
+        id="@+id/maps"
+        icon="@drawable/ic_maps"
+        title="@string/maps_bottomBar"
+        barColorWhenSelected="@color/textIcon"/>
+</tabs>
