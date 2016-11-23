@@ -14,15 +14,15 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="0.4dp"
-            android:layout_weight="0.4">
+            android:layout_height="0.48dp"
+            android:layout_weight="0.48">
 
             <ImageView
                 android:id="@+id/imageBackground"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:background="@drawable/comida"/>
+                android:background="@drawable/backgrounddos"/>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -31,19 +31,150 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/logo"
-                    android:layout_centerInParent="true"
-                    android:scaleX="1.3"
-                    android:scaleY="1.3"/>
+                    android:background="@drawable/log"
+                    android:scaleX="1.1"
+                    android:scaleY="1.1"
+                    android:layout_centerInParent="true" />
 
             </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:background="@drawable/degradado_image"
+                android:layout_gravity="bottom">
 
+            </RelativeLayout>
         </FrameLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.6"
-            android:background="@color/prueba">
+            android:layout_weight="0.52"
+            android:background="@color/backgroundSearch"
+            android:padding="5dp">
+
+            <!-- Contenedor  -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:weightSum="1"
+                android:background="@color/backgroundSearch">
+
+                <!-- Contenedor hijo  -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_weight="0.5"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <Button
+                        android:id="@+id/buttonBreakfast"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="@string/search_category_breakfast"
+                        android:drawableTop="@drawable/desayuno"
+                        android:background="@color/backgroundSearch"
+                        android:gravity="center_horizontal"
+                        android:theme="@style/ButtonSearch"/>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/degradado_top"/>
+
+                    <Button
+                        android:id="@+id/buttonLunch"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="@string/search_category_lunch"
+                        android:drawableTop="@drawable/almuerzo"
+                        android:background="@color/backgroundSearch"
+                        android:gravity="center_horizontal"
+                        android:theme="@style/ButtonSearch"/>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/degradado_top" />
+
+                    <Button
+                        android:id="@+id/buttonDinner"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="@string/search_category_dinner"
+                        android:drawableTop="@drawable/cena"
+                        android:background="@color/backgroundSearch"
+                        android:gravity="center_horizontal"
+                        android:theme="@style/ButtonSearch"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@drawable/degradado_horizontal" />
+
+                <!-- Contenedor hijo -->
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_weight="0.5"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <Button
+                        android:id="@+id/buttonCoffe"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="@string/search_category_coffeAndTea"
+                        android:drawableTop="@drawable/te"
+                        android:background="@color/backgroundSearch"
+                        android:gravity="center_horizontal"
+                        android:theme="@style/ButtonSearch"/>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/degradado_bottom" />
+
+                    <Button
+                        android:id="@+id/buttonNight"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="@string/search_category_night"
+                        android:background="@color/backgroundSearch"
+                        android:drawableTop="@drawable/nocturna"
+                        android:gravity="center_horizontal"
+                        android:theme="@style/ButtonSearch"/>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/degradado_bottom" />
+
+                    <Button
+                        android:id="@+id/buttonThingsToDo"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="@string/search_category_thingToDo"
+                        android:drawableTop="@drawable/cosashacer"
+                        android:background="@color/backgroundSearch"
+                        android:gravity="center_horizontal"
+                        android:theme="@style/ButtonSearch"
+                        android:fontFamily="sans-serif-medium"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
 
         </LinearLayout>
 

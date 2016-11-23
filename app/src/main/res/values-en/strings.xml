@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--name app y name fragment -->
+    <string name="title_activity_referencia">ReferenciaActivity</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_name">Foursquare</string>
+    <!---->
+
+    <!-- String Principal bottombar-->
+    <string name="search_bottomBar">Search</string>
+    <string name="list_bottomBar">List</string>
+    <string name="maps_bottomBar">Maps</string>
+    <!---->
+
+    <!-- String Category Search  -->
+    <string name="search_category_breakfast">Breakfast</string>
+    <string name="search_category_lunch">Lunch</string>
+    <string name="search_category_dinner">Dinner</string>
+    <string name="search_category_coffeAndTea">Coffe and Tea</string>
+    <string name="search_category_night">Night</string>
+    <string name="search_category_thingToDo">Things to do</string>
+    <!-- -->
+
+
+</resources>
