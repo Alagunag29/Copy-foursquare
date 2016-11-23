@@ -27,6 +27,18 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
+        <!--
+            referencia a la activity ListaPlaces y con sus atributos que
+            la hagan ser hija de la activity Contenedora, y se pueda regresar un nivel
+        -->
+        <activity
+            android:name=".view.ListPlacesActivity"
+            android:parentActivityName=".ContainerActivity">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ContainerActivity"/>
+        </activity>
     </application>
 
 </manifest>

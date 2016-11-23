@@ -34,7 +34,6 @@ public class MapsFragment extends android.support.v4.app.Fragment implements OnM
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         /*
         MapsFragment mapsFragment = (MapsFragment)getChildFragmentManager().findFragmentById(R.id.map);
         mapsFragment.getMa */

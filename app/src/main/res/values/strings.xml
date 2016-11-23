@@ -20,7 +20,10 @@
     <string name="search_category_coffeAndTea">Café y té</string>
     <string name="search_category_night">Nocturna</string>
     <string name="search_category_thingToDo">Cosas por hacer</string>
-    <!-- -->
+
+    <!-- String Title de la apps-->
+    <string name="title_toolbar_list_search">Search</string>
+    <!---->
 
 
 </resources>

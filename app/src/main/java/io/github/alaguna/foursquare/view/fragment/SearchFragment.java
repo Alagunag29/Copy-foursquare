@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import io.github.alaguna.foursquare.R;
+import io.github.alaguna.foursquare.view.ListPlacesActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -37,9 +38,9 @@ public class SearchFragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*
-               Intent intent = new Intent( getActivity(), Main2Activity.class);
-                startActivity(intent);*/
+
+               Intent intent = new Intent( getActivity(), ListPlacesActivity.class);
+                startActivity(intent);
 
 
             }
