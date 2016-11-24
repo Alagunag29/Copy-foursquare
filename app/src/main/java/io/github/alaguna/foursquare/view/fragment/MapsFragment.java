@@ -23,6 +23,7 @@ import io.github.alaguna.foursquare.R;
 
 public class MapsFragment extends android.support.v4.app.Fragment implements OnMapReadyCallback {
 
+    GoogleMap map ;
 
     @Nullable
     @Override
@@ -44,6 +45,16 @@ public class MapsFragment extends android.support.v4.app.Fragment implements OnM
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
+
+        map=googleMap;
+
+        map.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+        map.getUiSettings().setZoomControlsEnabled(true);
+        LatLng santa = new LatLng(7.93939494, -7.3232423);
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(santa, 12));
+
+        MarkerOptions par = new MarkerOptions().title("paza").position(santa);
+        map.addMarker(par);
 
     }
 }
