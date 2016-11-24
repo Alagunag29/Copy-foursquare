@@ -42,7 +42,6 @@ public class SearchFragment extends Fragment {
                Intent intent = new Intent( getActivity(), ListPlacesActivity.class);
                 startActivity(intent);
 
-
             }
         });
 
