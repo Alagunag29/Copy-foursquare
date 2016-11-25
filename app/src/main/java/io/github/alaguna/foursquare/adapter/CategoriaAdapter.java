@@ -2,17 +2,23 @@ package io.github.alaguna.foursquare.adapter;
 
 import android.content.ClipData;
 import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
+import java.util.ArrayList;
 import java.util.List;
 
 import io.github.alaguna.foursquare.R;
 import io.github.alaguna.foursquare.model.Categoria;
+import io.github.alaguna.foursquare.model.Sitio;
 
 /**
  * Created by Alaguna on 23/11/2016.
@@ -37,16 +43,26 @@ public class CategoriaAdapter extends ArrayAdapter  {
         }
 
 
-        Categoria item = (Categoria) getItem(position);
+        Sitio item = (Sitio) getItem(position);
         TextView nameSite = (TextView)v.findViewById(R.id.nameSite);
-       // TextView namePlate = (TextView)v.findViewById(R.id.namePlate);
+        TextView specialty = (TextView)v.findViewById(R.id.specialty);
+        //RatingBar rating = (RatingBar)v.findViewById(R.id.rating);
         TextView city = (TextView)v.findViewById(R.id.city);
-       // TextView descripcion = (TextView)v.findViewById(R.id.descripcion);
-        //TextView nameOwner = (TextView)v.findViewById(R.id.nameOwner);
+        TextView descripcion = (TextView)v.findViewById(R.id.description);
+        TextView nameOwer = (TextView)v.findViewById(R.id.nameOwner);
+        ImageView imagenPlato = (ImageView) v.findViewById(R.id.imagenPlato);
 
-         nameSite.setText(item.getNombre());
-        //city.setText(item.getSiti(position).getUbicacion().getCiudad());
 
+        nameSite.setText( position+1 + ". " + item.getNombre());
+        specialty.setText(item.getEspecialidad());
+        city.setText(item.getUbicacion().getCiudad());
+        descripcion.setText(item.getDescripcion());
+        nameOwer.setText(item.getPropietario());
+        System.out.println(item.getFoto());
+        System.out.println("------------------------------------------------------------------------------------------------------");
+        Glide.with(getContext().getApplicationContext()).load(item.getFoto()).into(imagenPlato);
+       // rating.setNumStars(5);
+       // rating.setProgress(item.getValoracion());
         return v;
     }
 }

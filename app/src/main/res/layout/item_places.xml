@@ -8,7 +8,7 @@
     android:orientation="vertical">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:paddingTop="@dimen/padding_cardview_vertical"
@@ -38,7 +38,7 @@
 
             <!-- Nombre, ubicacion-->
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
@@ -58,21 +58,20 @@
                         android:id="@+id/specialty"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Steakhouse"/>
+                        android:text="Steakhouse"
+                        android:layout_marginRight="@dimen/activity_horizontal_margin"/>
 
                     <io.techery.properratingbar.ProperRatingBar
+                        android:id="@+id/rating"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="15dp"
+                        android:textSize="14dp"
                         android:textStyle="bold"
-                        android:id="@+id/poper"
                         prb_defaultRating="4"
                         prb_symbolicTick="$"
                         prb_symbolicTickNormalColor="@android:color/darker_gray"
-                        prb_symbolicTickSelectedColor="@android:color/holo_green_dark"
+                        prb_symbolicTickSelectedColor="@android:color/holo_blue_dark"
                         prb_totalTicks="5"
-                        android:layout_alignBottom="@+id/text_epcialidad"
-
                         />
 
                 </LinearLayout>
@@ -112,6 +111,7 @@
                  android:id="@+id/nameOwner"
                  android:layout_width="match_parent"
                  android:layout_height="wrap_content"
+                 android:layout_marginBottom="@dimen/activity_vertical_margin"
                  android:text="JUAN JOSE DURAN MEJIA"/>
 
          </LinearLayout>
@@ -123,7 +123,7 @@
         android:layout_height="wrap_content">
 
         <View
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@color/dividerColor"/>
 

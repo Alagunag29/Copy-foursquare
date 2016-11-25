@@ -1,10 +1,12 @@
 package io.github.alaguna.foursquare.model;
 
+import java.io.Serializable;
+
 /**
  * Created by Alaguna on 23/11/2016.
  */
 
-public class Ubicacion {
+public class Ubicacion  implements Serializable {
     private double latitud;
     private double longitud;
     private String direccion;

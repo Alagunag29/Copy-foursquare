@@ -9,7 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import io.github.alaguna.foursquare.ContainerActivity;
 import io.github.alaguna.foursquare.R;
+import io.github.alaguna.foursquare.model.Categoria;
 import io.github.alaguna.foursquare.view.ListPlacesActivity;
 
 /**
@@ -33,21 +35,78 @@ public class SearchFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
+        Button buttonBreakfast, buttonLunch, buttonDinner, buttonCoffe, buttonNight, buttonThingsToDo;
         View view = inflater.inflate(R.layout.fragment_search, container, false);
-        Button button = (Button) view.findViewById(R.id.buttonBreakfast);
-        button.setOnClickListener(new View.OnClickListener() {
+
+        buttonBreakfast = (Button) view.findViewById(R.id.buttonBreakfast);
+        buttonLunch = (Button) view.findViewById(R.id.buttonLunch);
+        buttonDinner = (Button) view.findViewById(R.id.buttonDinner);
+        buttonCoffe = (Button) view.findViewById(R.id.buttonCoffe);
+        buttonNight = (Button) view.findViewById(R.id.buttonNight);
+        buttonThingsToDo = (Button) view.findViewById(R.id.buttonThingsToDo);
+
+        buttonBreakfast.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(ContainerActivity.categorias != null){
+                    lanzarIntentActivity(0);
+                }
+            }
+        });
 
-               Intent intent = new Intent( getActivity(), ListPlacesActivity.class);
-                startActivity(intent);
+        buttonLunch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(ContainerActivity.categorias != null){
+                    lanzarIntentActivity(1);
+                }
+            }
+        });
 
+        buttonDinner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(ContainerActivity.categorias != null){
+                    lanzarIntentActivity(2);
+                }
+            }
+        });
+
+        buttonCoffe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(ContainerActivity.categorias != null){
+                    lanzarIntentActivity(3);
+                }
+            }
+        });
+
+        buttonNight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(ContainerActivity.categorias != null){
+                    lanzarIntentActivity(4);
+                }
+            }
+        });
+
+        buttonThingsToDo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(ContainerActivity.categorias != null){
+                    lanzarIntentActivity(5);
+                }
             }
         });
 
         return view;
+    }
 
-
+    public void lanzarIntentActivity(int i){
+        Categoria categoria = ContainerActivity.categorias.get(i);
+        Intent intent = new Intent( getActivity(), ListPlacesActivity.class);
+        intent.putExtra("categoria", categoria);
+        startActivity(intent);
     }
 
 }

@@ -1,7 +1,7 @@
 package io.github.alaguna.foursquare.view.fragment;
 
-
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -14,47 +14,70 @@ import android.view.ViewGroup;
 import com.google.android.gms.maps.*;
 import com.google.android.gms.maps.model.*;
 import android.os.Bundle;
-/*
+
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;*/
+import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.MapFragment;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import io.github.alaguna.foursquare.ContainerActivity;
 import io.github.alaguna.foursquare.R;
+import io.github.alaguna.foursquare.model.Categoria;
+import io.github.alaguna.foursquare.model.Sitio;
 
 public class MapsFragment extends android.support.v4.app.Fragment implements OnMapReadyCallback {
 
-    GoogleMap map ;
 
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-       return inflater.inflate(R.layout.fragment_maps, container, false);
-    }
+    GoogleMap maps;
 
-
-    @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        /*
-        MapsFragment mapsFragment = (MapsFragment)getChildFragmentManager().findFragmentById(R.id.map);
-        mapsFragment.getMa */
+    private SupportMapFragment fragmentMap;
+    public MapsFragment() {
 
     }
 
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view=inflater.inflate(R.layout.fragment_maps, container, false);
+        android.support.v4.app.FragmentManager fragmentManager=getChildFragmentManager();
+        fragmentMap=(SupportMapFragment)fragmentManager.findFragmentById(R.id.map);
+
+        if(fragmentMap!=null){
+            fragmentMap=SupportMapFragment.newInstance();
+            fragmentMap.getMapAsync(this);
+            fragmentMap.setRetainInstance(true);
+            fragmentManager.beginTransaction().add(R.id.map,fragmentMap).commit();
+        }
+
+        return view;
+    }
 
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
 
-        map=googleMap;
-
-        map.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
-        map.getUiSettings().setZoomControlsEnabled(true);
-        LatLng santa = new LatLng(7.93939494, -7.3232423);
-        map.animateCamera(CameraUpdateFactory.newLatLngZoom(santa, 12));
-
-        MarkerOptions par = new MarkerOptions().title("paza").position(santa);
-        map.addMarker(par);
+        maps=googleMap;
+        LatLng santa = new LatLng(11.2403547,-74.2110227);
+        maps.animateCamera(CameraUpdateFactory.newLatLngZoom(santa,11));
+        /*
+        List<Categoria> categorias = ContainerActivity.categorias;
+        if (categorias != null) {
+            for (Categoria categoria : categorias) {
+                for (Sitio sitio : categoria.getSitios()) {
+                    System.out.println("---------------------------------------------------------------------------------------------");
+                    System.out.println(sitio.getNombre());
+                    System.out.println(sitio.getUbicacion().getLatitud());
+                    System.out.println(sitio.getUbicacion().getLongitud());
+                    LatLng posicion = new LatLng(sitio.getUbicacion().getLatitud(), sitio.getUbicacion().getLongitud());
+                    MarkerOptions par = new MarkerOptions().title(sitio.getNombre()).position(posicion);
+                    maps.addMarker(par);
+                }
+            }
+        }*/
 
     }
+
+
 }

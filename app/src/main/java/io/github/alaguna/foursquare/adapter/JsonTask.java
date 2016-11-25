@@ -27,11 +27,9 @@ public class JsonTask extends AsyncTask<URL, Void, List<Categoria>> {
     private HttpURLConnection connection = null;
     private ArrayAdapter adaptador;
     private Context context;
-    private ListView lista;
 
-    public JsonTask(ListView lista, Context context) {
+    public JsonTask(Context context) {
         this.context = context;
-        this.lista = lista;
     }
 
     @Override
@@ -67,21 +65,9 @@ public class JsonTask extends AsyncTask<URL, Void, List<Categoria>> {
             /*
             Asignar los objetos de Json parseados al adaptador
              */
-        if(categorias!=null) {
-
-            adaptador = new CategoriaAdapter(context,0, categorias);
-            lista.setAdapter(adaptador);
-            lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Categoria hotelItem = (Categoria) adaptador.getItem(position);
-                    Intent intent = new Intent(context, ContainerActivity.class);
-                    intent.putExtra("icategoria", hotelItem);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    context.startActivity(intent);
-                }
-            });
-        }else{
+        if(categorias !=null) {
+            ContainerActivity.categorias = categorias;
+        } else {
             Toast.makeText(
                     this.context,
                     "Ocurrió un error de Parsing Json",

@@ -1,10 +1,12 @@
 package io.github.alaguna.foursquare.model;
 
+import java.io.Serializable;
+
 /**
  * Created by Alaguna on 23/11/2016.
  */
 
-public class Calificacion {
+public class Calificacion implements Serializable {
     private double puntaje;
     private int total;
 

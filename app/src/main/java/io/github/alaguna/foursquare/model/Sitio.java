@@ -1,12 +1,13 @@
 package io.github.alaguna.foursquare.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by Alaguna on 23/11/2016.
  */
 
-public class Sitio {
+public class Sitio implements Serializable{
     private String nombre;
     private String especialidad;
     private int valoracion;

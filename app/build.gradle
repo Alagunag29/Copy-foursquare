@@ -35,4 +35,5 @@ dependencies {
     compile 'com.zoonref:simple-view-behavior:1.0'
     compile 'com.google.code.gson:gson:2.3'
     compile 'com.github.techery:ProperRatingBar:v0.0.3'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
 }
