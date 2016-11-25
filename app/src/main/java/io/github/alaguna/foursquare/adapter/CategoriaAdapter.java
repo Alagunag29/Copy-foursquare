@@ -15,10 +15,12 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 import io.github.alaguna.foursquare.R;
 import io.github.alaguna.foursquare.model.Categoria;
 import io.github.alaguna.foursquare.model.Sitio;
+import io.techery.properratingbar.ProperRatingBar;
 
 /**
  * Created by Alaguna on 23/11/2016.
@@ -30,8 +32,7 @@ public class CategoriaAdapter extends ArrayAdapter  {
         super(context, resource, objects);
     }
 
-    public View getView(int position, View convertView,
-                        ViewGroup parent){
+    public View getView(int position, View convertView, ViewGroup parent){
         //Obteniendo una instancia del inflater
         LayoutInflater inflater = (LayoutInflater)getContext()
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -46,11 +47,12 @@ public class CategoriaAdapter extends ArrayAdapter  {
         Sitio item = (Sitio) getItem(position);
         TextView nameSite = (TextView)v.findViewById(R.id.nameSite);
         TextView specialty = (TextView)v.findViewById(R.id.specialty);
-        //RatingBar rating = (RatingBar)v.findViewById(R.id.rating);
+        ProperRatingBar rating = (ProperRatingBar) v.findViewById(R.id.rating);
         TextView city = (TextView)v.findViewById(R.id.city);
         TextView descripcion = (TextView)v.findViewById(R.id.description);
         TextView nameOwer = (TextView)v.findViewById(R.id.nameOwner);
         ImageView imagenPlato = (ImageView) v.findViewById(R.id.imagenPlato);
+        TextView puntaje = (TextView) v.findViewById(R.id.puntaje);
 
 
         nameSite.setText( position+1 + ". " + item.getNombre());
@@ -61,8 +63,11 @@ public class CategoriaAdapter extends ArrayAdapter  {
         System.out.println(item.getFoto());
         System.out.println("------------------------------------------------------------------------------------------------------");
         Glide.with(getContext().getApplicationContext()).load(item.getFoto()).into(imagenPlato);
-       // rating.setNumStars(5);
-       // rating.setProgress(item.getValoracion());
+        rating.setRating(item.getValoracion());
+        puntaje.setText( Double.toString(item.getCalificacion().getPuntaje()));
+
+
+
         return v;
     }
 }

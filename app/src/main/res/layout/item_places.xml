@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:cardview="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/tools"
     android:orientation="vertical">
 
     <LinearLayout
@@ -38,7 +38,7 @@
 
             <!-- Nombre, ubicacion-->
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
@@ -67,11 +67,11 @@
                         android:layout_height="wrap_content"
                         android:textSize="14dp"
                         android:textStyle="bold"
-                        prb_defaultRating="4"
-                        prb_symbolicTick="$"
-                        prb_symbolicTickNormalColor="@android:color/darker_gray"
-                        prb_symbolicTickSelectedColor="@android:color/holo_blue_dark"
-                        prb_totalTicks="5"
+                        app:prb_defaultRating="4"
+                        app:prb_symbolicTick="$"
+                        app:prb_symbolicTickNormalColor="@color/primaryText"
+                        app:prb_symbolicTickSelectedColor="@color/colorAccent"
+                        app:prb_totalTicks="5"
                         />
 
                 </LinearLayout>
@@ -79,10 +79,30 @@
 
                 <TextView
                     android:id="@+id/city"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="1mi Santa Marta, Magdalena"/>
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/puntaje"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:text="4"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    android:layout_gravity="right"
+                    android:textColor="@color/primaryText"
+                    android:background="@android:color/holo_green_dark"
+                    android:textAlignment="center" />
+
+            </LinearLayout>
+
 
         </LinearLayout>
 
@@ -113,6 +133,7 @@
                  android:layout_height="wrap_content"
                  android:layout_marginBottom="@dimen/activity_vertical_margin"
                  android:text="JUAN JOSE DURAN MEJIA"/>
+
 
          </LinearLayout>
 
